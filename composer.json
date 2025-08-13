@@ -1,0 +1,18 @@
+{
+    "name": "yahay/php-dependency-injector",
+    "description": "Dependency injection php library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Yahay\\PhpDependencyInjector\\": "Src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yahaya Bathily",
+            "email": "yahayad.dev@gmail.com"
+        }
+    ],
+    "require": {}
+}
