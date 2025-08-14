@@ -8,4 +8,5 @@ namespace Yahay\PhpDependencyInjector;
 enum DependencyManagerError
 {
     case DEPENDENCY_NOT_FOUND;
+    case DEPENDENCY_BUILD_FAIL;
 }
