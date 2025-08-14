@@ -4,3 +4,7 @@
 
 # Vendor directories
 **/vendor/
+
+# Tests cache
+Test/cache/*
+!Test/cache/.gitkeep

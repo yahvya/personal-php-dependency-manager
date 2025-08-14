@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="./Test/boostrap.php"
-         cacheDirectory="./Test/cache"
-         executionOrder="depends,defects"
-         requireCoverageMetadata="true"
-         beStrictAboutCoverageMetadata="true"
-         beStrictAboutOutputDuringTests="true"
-         displayDetailsOnPhpunitDeprecations="true"
-         failOnPhpunitDeprecation="true"
-         failOnRisky="true"
-         failOnWarning="true">
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+    bootstrap="./Test/boostrap.php"
+    cacheDirectory="./Test/cache"
+    executionOrder="depends,defects"
+    requireCoverageMetadata="true"
+    beStrictAboutCoverageMetadata="true"
+    beStrictAboutOutputDuringTests="true"
+    displayDetailsOnPhpunitDeprecations="true"
+    failOnPhpunitDeprecation="true"
+    failOnRisky="true"
+    failOnWarning="true"
+    testdox="true"
+>
     <testsuites>
         <testsuite name="default">
             <directory>Test</directory>
@@ -22,4 +24,12 @@
             <directory>Src</directory>
         </include>
     </source>
+
+    <coverage
+        ignoreDeprecatedCodeUnits="true"
+    >
+        <report>
+            <html outputDirectory="Test/cache/html-coverage"/>
+        </report>
+    </coverage>
 </phpunit>
