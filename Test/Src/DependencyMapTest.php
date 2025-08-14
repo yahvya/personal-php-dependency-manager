@@ -1,9 +1,10 @@
 <?php
 
-namespace Src;
+namespace Test\Src;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\UsesNamespace;
 use PHPUnit\Framework\TestCase;
 use Yahay\PhpDependencyInjector\BuilderDataDto;
 use Yahay\PhpDependencyInjector\DependencyMap;
@@ -13,6 +14,7 @@ use Yahay\PhpDependencyInjector\DependencyMap;
  */
 #[CoversClass(className: DependencyMap::class)]
 #[CoversClass(className: BuilderDataDto::class)]
+#[UsesNamespace(namespace: "Yahay\PhpDependencyInjector")]
 class DependencyMapTest extends TestCase
 {
     #[TestDox(text: "Test that the registerSingleton method effectively store the expected data")]

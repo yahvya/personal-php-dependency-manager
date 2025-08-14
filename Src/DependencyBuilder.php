@@ -35,6 +35,11 @@ class DependencyBuilder
      */
     public function build(BuilderDataDto $builderDataDto): object
     {
+        if($builderDataDto->buildResult !== null)
+        {
+            return $builderDataDto->buildResult;
+        }
+
         $builderParameters = $builderDataDto->manualParameters;
 
         try

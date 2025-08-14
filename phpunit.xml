@@ -23,6 +23,10 @@
         <include>
             <directory>Src</directory>
         </include>
+        <exclude>
+            <file>Src/DependencyManagerError.php</file>
+            <file>Src/DependencyManagerException.php</file>
+        </exclude>
     </source>
 
     <coverage

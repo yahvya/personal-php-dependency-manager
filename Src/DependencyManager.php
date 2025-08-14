@@ -2,6 +2,8 @@
 
 namespace Yahay\PhpDependencyInjector;
 
+use Exception;
+
 /**
  * Dependencies manager
  * @notice Pseudo singleton class. You can use it like that, or you can use DependencyManager::get() which will return the same instance. The constructor is opened
@@ -39,7 +41,27 @@ class DependencyManager
      */
     public function getDependency(string $class):object
     {
-        return $this;
+        if(isset($this->dependenciesMap->classics[$class]))
+        {
+            return $this->dependencyBuilder->build(builderDataDto: $this->dependenciesMap->classics[$class]);
+        }
+
+        if(isset($this->dependenciesMap->singletons[$class]))
+        {
+            $buildResult = $this->dependencyBuilder->build(builderDataDto: $this->dependenciesMap->singletons[$class]);
+
+            if($this->dependenciesMap->singletons[$class]->buildResult === null)
+            {
+                $this->dependenciesMap->singletons[$class]->buildResult = $buildResult;
+            }
+
+            return $buildResult;
+        }
+
+        throw new DependencyManagerException(
+            errorType: DependencyManagerError::DEPENDENCY_NOT_FOUND,
+            e: new Exception()
+        );
     }
 
     /**
