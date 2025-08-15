@@ -33,7 +33,8 @@
         ignoreDeprecatedCodeUnits="true"
     >
         <report>
-            <html outputDirectory="Test/cache/html-coverage"/>
+            <html outputDirectory="Test/cache/coverage/html-coverage"/>
+            <text outputFile="Test/cache/coverage/text-coverage.txt"/>
         </report>
     </coverage>
 </phpunit>
