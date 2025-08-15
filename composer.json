@@ -1,6 +1,6 @@
 {
-  "name": "yahay/php-dependency-injector",
-  "description": "Dependency injection php library",
+  "name": "yahay/php-dependency-manager",
+  "description": "Dependency manager php library",
   "type": "library",
   "license": "MIT",
   "autoload": {
