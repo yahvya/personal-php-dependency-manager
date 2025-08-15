@@ -74,7 +74,12 @@ class DependencyManager
      */
     public function call(Callable $toCall,array $manualParameters = []):mixed
     {
-        return null;
+        $fakeBuilder = new BuilderDataDto(
+            builder: $toCall,
+            manualParameters: $manualParameters
+        );
+
+        return $this->dependencyBuilder->build(builderDataDto: $fakeBuilder);
     }
 
     /**
