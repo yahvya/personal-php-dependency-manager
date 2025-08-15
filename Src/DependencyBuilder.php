@@ -29,11 +29,11 @@ class DependencyBuilder
     /**
      * Build the dependency
      * @param BuilderDataDto $builderDataDto Builder data
-     * @return object Built dependency
+     * @return mixed Builder method call result
      * @throws DependencyManagerException On error
      * @attention Be aware of circular dependencies
      */
-    public function build(BuilderDataDto $builderDataDto): object
+    public function build(BuilderDataDto $builderDataDto): mixed
     {
         if($builderDataDto->buildResult !== null)
         {

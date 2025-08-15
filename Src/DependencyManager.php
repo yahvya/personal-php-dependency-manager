@@ -52,7 +52,8 @@ class DependencyManager
 
             if($this->dependenciesMap->singletons[$class]->buildResult === null)
             {
-                $this->dependenciesMap->singletons[$class]->buildResult = $buildResult;
+                $editableBuilderData = $this->dependenciesMap->singletons[$class];
+                $editableBuilderData->buildResult = $buildResult;
             }
 
             return $buildResult;
